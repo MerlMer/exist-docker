@@ -23,7 +23,7 @@ On EXIST Container:
 # python3.5 manage.py runserver 0.0.0.0:8000 &
 ```
 
-Then, Access with your favorite browser to http://{{EXIST container's IP}}:8000
+Then, Access with your favorite browser to http://{{EXIST container's IP}}:8000 .
 
-## LICENCE
+## Licence
 MIT Licence
