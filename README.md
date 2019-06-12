@@ -25,5 +25,5 @@ On EXIST Container:
 
 Then, Access with your favorite browser to http://{{EXIST container's IP}}:8000 .
 
-## Licence
-MIT Licence
+## License
+MIT License
