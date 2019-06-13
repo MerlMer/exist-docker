@@ -80,8 +80,8 @@ mysql_install_db --datadir=/var/lib/mysql --user=mysql && \
 echo ${sql1} | mysql -uroot -t && \
 echo ${sql2} | mysql -uroot -t && \
 echo ${sql3} | mysql -uroot -t && \
-sed -i -e "s/\#\(.*\)'192.168.56.101',/\1'localhost',\n\1'$(hostname -i)',/g" -e "s/YOUR_DB_USER/exist/g" -e "s/YOUR_DB_PASSWORD/exist/g" intelligence/settings.py
+#sed -i -e "s/\#\(.*\)'192.168.56.101',/\1'localhost',\n\1'$(hostname -i)',/g" -e "s/YOUR_DB_USER/exist/g" -e "s/YOUR_DB_PASSWORD/exist/g" intelligence/settings.py
+sed -i -e "s/\#\(.*\)'192.168.56.101',/\1'\*',/g" -e "s/YOUR_DB_USER/exist/g" -e "s/YOUR_DB_PASSWORD/exist/g" intelligence/settings.py
 
-CMD ["systemctl start redis && systemctl enable redis && /usr/share/mysql/mysql.server start && systemctl start celery && python3.5 manage.py makemigrations exploit requtation threat threat_hunter twitter twitter_hunter && python3.5 manage.py migrate && python3.5 /EXIST/manage.py runserver 0.0.0.0:8000 &"]
-
+CMD ["systemctl start redis && systemctl enable redis && /usr/share/mysql/mysql.server start && systemctl start celery"]
 
