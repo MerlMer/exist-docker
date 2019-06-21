@@ -80,7 +80,7 @@ mysql_install_db --datadir=/var/lib/mysql --user=mysql && \
 echo ${sql1} | mysql -uroot -t && \
 echo ${sql2} | mysql -uroot -t && \
 echo ${sql3} | mysql -uroot -t && \
-sed -i -e "s/\#\(.*\)'192.168.56.101',/\1'\*',/g" -e "s/YOUR_DB_USER/exist/g" -e "s/YOUR_DB_PASSWORD/exist/g" intelligence/settings.py
+sed -i -e "s/\#\(.*\)'192.168.56.101',/\1'\*',/g" -e "s/YOUR_DB_USER/exist/g" -e "s/YOUR_DB_PASSWORD/exist/g" intelligence/settings.py && \
 find /EXIST -type f | xargs -I {} sed -i -e "s/env python/env python3.5/g" {}
 
 CMD ["systemctl start redis && systemctl enable redis && /usr/share/mysql/mysql.server start && systemctl start celery"]
