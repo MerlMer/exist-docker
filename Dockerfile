@@ -15,7 +15,7 @@ ARG sql3="GRANT ALL PRIVILEGES ON intelligence_db.* TO 'exist'@'localhost';"
 RUN yum -y install epel-release && \
 yum -y groupinstall "Development Tools" && \
 yum -y install https://centos7.iuscommunity.org/ius-release.rpm && \
-yum -y install git openssl-devel python35u python35u-devel python35u-libs python35u-pip redis && \
+yum -y install git openssl-devel python35u python35u-devel python35u-libs python35u-pip redis iproute && \
 curl -sS https://downloads.mariadb.com/MariaDB/mariadb_repo_setup | bash && \
 yum -y install mariadb-server mariadb-client && \
 python3.5 -m ensurepip && \
