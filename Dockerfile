@@ -32,7 +32,7 @@ echo $'# Name of nodes to start\n\
 #CELERYD_NODES="w1 w2 w3"\n\
 \n\
 # Absolute or relative path to the 'celery' command:\n\
-  CELERY_BIN="/path/to/your/celery"\n\
+  CELERY_BIN="/usr/bin/celery"\n\
 \n\
 # App instance to use\n\
 # comment out this line if you don't use an app\n\
